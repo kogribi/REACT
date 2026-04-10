@@ -7,7 +7,7 @@ import './Flower.css'
 function Flower() {
 
     const [flowerValue, setFlowerValue] = useState();
-    const [Count, setCount] = useState(0);
+    const [count, setCount] = useState(0);
     const [limit] = useState(() => Math.floor(Math.random() * 10) + 1);
     function pullFlower() {
         setCount((prevCount) => {
@@ -30,11 +30,11 @@ function Flower() {
     });
 }
 
-const remaining = limit - Count;
+const remaining = limit - count;
 
     return <article className="flower">
     <h2>Puķite</h2>
-    <button onClick={pullFlower} className="button" disabled={Count >= limit}>Raut</button>
+    <button onClick={pullFlower} className="button" disabled={count >= limit}>Raut</button>
     <p><strong>{flowerValue}</strong></p>
     <div className="petals">
         {Array.from({ length: remaining }).map((_, index) => (
